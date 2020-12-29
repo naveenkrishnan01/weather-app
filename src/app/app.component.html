@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="container">
+    <div class="vertical-center">
+        <br>
+     <input type="text" [(ngModel)]='inputCity'> 
+    <br>
+    <br>
+    <button (click)="fetchWeatherApi()">Get Weather</button>
+    <button (click)="clearStatus()">Clear</button>
+    
+    <div *ngIf="cityweather; else errorMsg"> <br>
+        <b>Status</b> {{cityweather}}
+    </div>
+    <div *ngIf="country">
+        <b> Country:</b> {{country}}
+    </div>
+    <ng-template #errorMsg>
+        <div class="errorMessage">
+            City Not Found
+        </div>
+    </ng-template>
+    </div>
+    </div>
